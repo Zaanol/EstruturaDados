@@ -1,0 +1,112 @@
+<html>
+  <head>
+    <title>Jogo da Véia</title>
+    <script>
+      jogador = "X";
+      var matriz = new Array();
+
+      function resetar(){
+          for (i=1; i<4; i++){
+             for (j=1; j<4; j++){
+                nomequadrado = "" + i + j;
+                document.getElementById(nomequadrado).innerHTML = "";
+                matriz["" + i + j] = "";
+            }
+         }
+      }
+
+      function joga(quadrado){
+          jogada = document.getElementById(quadrado).innerHTML;
+         if (matriz[quadrado] != ""){
+            alert("Quadrado em uso");
+        }else{
+              if (jogador == "X"){
+                  jogador = "O";
+              }else{
+                  jogador = "X";
+              }
+              matriz[quadrado] = jogador;
+              document.getElementById(quadrado).innerHTML = matriz[quadrado];
+          checar();
+         }
+      }
+
+      function checar(){
+          if((matriz[11] == matriz[22]) && (matriz[11] == matriz[33]) && (matriz[11] != "")){
+            alert("Você GANHOU!");
+            resetar();
+          }
+
+          if((matriz[31] == matriz[22]) && (matriz[31] == matriz[13]) && (matriz[31] != "")){
+            alert("Você GANHOU!");
+            resetar();
+          }
+
+          if((matriz[11] == matriz[12]) && (matriz[11] == matriz[13]) && (matriz[11] != "")){
+            alert("Você GANHOU!");
+            resetar();
+          }
+
+          if((matriz[21] == matriz[22]) && (matriz[21] == matriz[23]) && (matriz[21] != "")){
+            alert("Você GANHOU!");
+            resetar();
+          }
+
+          if((matriz[31] == matriz[32]) && (matriz[31] == matriz[33]) && (matriz[31] != "")){
+            alert("Você GANHOU!");
+            resetar();
+          }
+
+          if((matriz[11] == matriz[21]) && (matriz[11] == matriz[31]) && (matriz[11] != "")){
+            alert("Você GANHOU!");
+            resetar();
+          }
+
+          if((matriz[12] == matriz[22]) && (matriz[12] == matriz[32]) && (matriz[12] != "")){
+            alert("Você GANHOU!");
+            resetar();
+          }
+
+          if((matriz[13] == matriz[23]) && (matriz[13] == matriz[33]) && (matriz[13] != "")){
+            alert("Você GANHOU!");
+            resetar();
+          }
+
+      }
+    </script>
+  </head>
+
+  <body onload="resetar()">
+    <center>
+      <h1>Jogo da Véia</h1>
+      <table style="background: #000000">
+        <tr>
+          <td align="center" id="11" class="quadrados" onclick="joga(this.id)"></td>
+          <td align="center" id="12" class="quadrados" onclick="joga(this.id)"></td>
+          <td align="center" id="13" class="quadrados" onclick="joga(this.id)"></td>
+        </tr>
+        <tr>
+          <td align="center" id="21" class="quadrados" onclick="joga(this.id)"></td>
+          <td align="center" id="22" class="quadrados" onclick="joga(this.id)"></td>
+          <td align="center" id="23" class="quadrados" onclick="joga(this.id)"></td>
+        </tr>
+        <tr>
+          <td align="center" id="31" class="quadrados" onclick="joga(this.id)"></td>
+          <td align="center" id="32" class="quadrados" onclick="joga(this.id)"></td>
+          <td align="center" id="33" class="quadrados" onclick="joga(this.id)"></td>
+        </tr>
+      </table>
+      <br><input type="button" name="limpar" value="Jogar novamente" onclick="resetar()">
+    </center>
+  </body>
+
+  <style type="text/css">
+    .quadrados{
+      width: 100px;
+      height: 100px;
+      background: #a65;
+      font-size: 80px;
+      color: #00000;
+    }
+  </style>
+</html>
