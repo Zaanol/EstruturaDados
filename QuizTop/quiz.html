@@ -1,0 +1,66 @@
+<html>
+	<head>
+	  <meta charset="utf-8">
+			<title>Quiz Top</title>
+			<script src="js/jquery-1.11.1.min.js"></script>
+			<link rel="icon" href="img/icone.ico" type="image/x-icon" />
+			<link rel="shortcut icon" href="img/icone.ico" type="image/x-icon" />
+			<script type="text/javascript" src="js/Funcoes.js"></script>
+			<link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+			<link href="css/style.css" rel="stylesheet" id="bootstrap-css">
+			<script src="js/bootstrap.min.js"></script>
+			<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+	</head>
+
+	<body>
+		<header class="masthead d-flex">
+		<div >
+		    <div class="modal-dialog">
+	      		<div class="modal-content">
+		         <div class="modal-header">
+		            <h3><div id="Pergunta"></div></h3>
+		        </div>
+		        <div id="areaAlternativas" class="modal-body">
+		            <div class="col-xs-3 col-xs-offset-5">
+		               <div id="loadbar" style="display: none;">
+		                  <div class="blockG" id="rotateG_01"></div>
+		                  <div class="blockG" id="rotateG_02"></div>
+		                  <div class="blockG" id="rotateG_03"></div>
+		                  <div class="blockG" id="rotateG_04"></div>
+		                  <div class="blockG" id="rotateG_05"></div>
+		                  <div class="blockG" id="rotateG_06"></div>
+		                  <div class="blockG" id="rotateG_07"></div>
+		                  <div class="blockG" id="rotateG_08"></div>
+		               </div>
+		          	</div>
+
+		          	<div class="quiz" id="quiz" data-toggle="buttons">
+			           <label onclick="Marcar((document.getElementById('Pergunta').innerHTML), (document.getElementById('Alternativa1').innerHTML))" class="element-animation1 btn btn-lg btn-primary btn-block"><span class="btn-label"></span> <div id="Alternativa1"></div></label>
+			           <label onclick="Marcar((document.getElementById('Pergunta').innerHTML), (document.getElementById('Alternativa2').innerHTML))" class="element-animation2 btn btn-lg btn-primary btn-block"><span class="btn-label"></span> <div id="Alternativa2"></div></label>
+			           <label onclick="Marcar((document.getElementById('Pergunta').innerHTML), (document.getElementById('Alternativa3').innerHTML))" class="element-animation3 btn btn-lg btn-primary btn-block"><span class="btn-label"></span> <div id="Alternativa3"></div></label>
+			           <label onclick="Marcar((document.getElementById('Pergunta').innerHTML), (document.getElementById('Alternativa4').innerHTML))" class="element-animation4 btn btn-lg btn-primary btn-block"><span class="btn-label"></span> <div id="Alternativa4"></div></label>
+			           <label onclick="Marcar((document.getElementById('Pergunta').innerHTML), (document.getElementById('Alternativa5').innerHTML))" class="element-animation5 btn btn-lg btn-primary btn-block"><span class="btn-label"></span> <div id="Alternativa5"></div></label>
+			       	</div>
+			       	<hr>
+		           	<center><div id="Doces"></div></center>
+		   		</div>
+			</div><Br>
+		<div id="refazerQuiz"></div>
+	</header>
+
+		<div id="respostas"></div>
+
+		<script>
+			let perguntas = new Fila();
+			let alternativas = new ListaEncadeada();
+			let recompensas = new Pilha();
+			GravarPerguntas();
+		</script>
+
+		<footer class="footer text-center">
+      		<div class="container">
+        		<p class="text-muted small mb-0">Copyright &copy; 2018 Willian Zanol & Danrlei Correa</p>
+      		</div>
+    	</footer>
+	</body>
+</html>

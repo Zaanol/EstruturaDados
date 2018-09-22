@@ -1,0 +1,78 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>YouTube Playlist</title>
+  <link rel="icon" href="images/icone.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="images/icone.ico" type="image/x-icon" />
+  <link href="css/main.css" rel="stylesheet">
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700,900' rel='stylesheet' type='text/css'>
+  <script type="text/javascript" src="js/YoutubeAPI.js"></script>
+  <script type="text/javascript" src="js/Funcoes.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+  <script>
+    var playlist = new Fila();
+    var player;
+
+  </script>
+
+  <header>
+    <div class="container-fluid">
+      <div class="row">
+        
+        <div class="col-md-2">
+          <a href="#"><img src="images/logo.png" class="logo"></a>
+        </div>
+
+        <div class="col-md-5">
+          <input id="link" placeholder="Digite um termo ou cole o link aqui" type="text">
+        </div>
+
+        <div class="col-md-5">
+          <ul id="user-info">
+            <li><button class="button" value="submit" onclick="buscar()">PESQUISAR</button><button class="button" onclick="tocaOSomDJ()">PLAY</button></li>
+            <li>
+              <ul class="notifications">
+                <li><i class="fa fa-envelope"></i><span>2</span></li>
+                <li><i class="fa fa-bell"></i><span>7</span></li>
+              </ul>
+            </li>
+            <li>
+              <img src="images/profile.png">
+              <div>
+                <p class="username">Zanol e Danrlei</p>
+                <p>54215 Subscribers</p>
+                <a href="#">Sair</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <hr>
+
+  <div class="row">
+    <div class="col-md-8">
+      <div id="resultados">
+      </div>
+    </div>
+		<div class="col-md-8">
+      <center>
+		    <div id="playerArea"></div>
+      </center>
+		</div>
+		<div class="col-md-4" id="proximosVideos"></div>
+  </div>
+
+  <footer>
+    <h4>Copyright &copy; 2018 Willian Zanol & Danrlei Correa</h4>
+  </footer>
+</body>
+</html>
